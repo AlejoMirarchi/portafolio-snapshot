@@ -24,7 +24,8 @@ async function fetchRepos(user: string, perPage = 6): Promise<Repo[]> {
 
 export async function GitHubSection() {
   const user = process.env.NEXT_PUBLIC_GITHUB_USER || "octocat"
-  const repos = await fetchRepos(user)
+  const perPage = parseInt(process.env.NEXT_PUBLIC_GITHUB_PER_PAGE || "6", 10)
+  const repos = await fetchRepos(user, perPage)
 
   return (
     <section id="repos" className="relative py-20 px-4 lg:px-8">

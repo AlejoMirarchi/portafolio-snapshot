@@ -51,53 +51,14 @@ export function Footer() {
             <p className="text-muted-foreground mb-6">
               ¿Tienes un proyecto en mente? Nos encantaría escucharte y colaborar contigo.
             </p>
-            <div className="flex gap-3">
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-primary hover:text-primary-foreground hover:border-primary bg-transparent"
-              >
-                <Github className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-primary hover:text-primary-foreground hover:border-primary bg-transparent"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-primary hover:text-primary-foreground hover:border-primary bg-transparent"
-              >
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-primary hover:text-primary-foreground hover:border-primary bg-transparent"
-              >
-                <Mail className="w-5 h-5" />
-              </Button>
-            </div>
+           
           </div>
         </div>
 
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">© 2025 Portfolio. Todos los derechos reservados.</p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors">
-                Privacidad
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                Términos
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                Contacto
-              </a>
-            </div>
+           
           </div>
         </div>
       </div>

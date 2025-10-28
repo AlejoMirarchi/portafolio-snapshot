@@ -19,6 +19,8 @@ const teamMembers = [
 		icon: <Code className="w-6 h-6 text-primary" />, // Renderizamos el icono aquí
 		experience: "8+ años",
 		projects: "50+ proyectos",
+		linkedin: "https://www.linkedin.com/in/lucas-sebastian-ramos",
+		github: "https://github.com/HelloMeow10",
 	},
 	{
 		name: "Alejo Mirarchi",
@@ -36,6 +38,8 @@ const teamMembers = [
 		icon: <Palette className="w-6 h-6 text-primary" />, // Renderizamos el icono aquí
 		experience: "6+ años",
 		projects: "100+ diseños",
+		linkedin: "https://www.linkedin.com/in/alejo-mirarchi-b0a13b370",
+		github: "https://github.com/AlejoMirarchi",
 	},
 	{
 		name: "Abril Lezcano",
@@ -53,6 +57,8 @@ const teamMembers = [
 		icon: <Database className="w-6 h-6 text-primary" />, // Renderizamos el icono aquí
 		experience: "7+ años",
 		projects: "40+ análisis",
+		linkedin: "https://www.linkedin.com/in/abril-lezcano-98b39633b/",
+		github: "https://github.com/AbrilAADKSDJL",
 	},
 ]
 

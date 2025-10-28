@@ -3,8 +3,9 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import React from "react" // Importamos React para habilitar el espacio de nombres JSX
+import { Github, Linkedin } from "lucide-react"
 
 interface TeamMemberCardProps {
   name: string
@@ -14,6 +15,8 @@ interface TeamMemberCardProps {
   icon: JSX.Element // Cambiamos el tipo de LucideIcon a JSX.Element
   experience: string
   projects: string
+  linkedin?: string
+  github?: string
 }
 
 export function TeamMemberCard({
@@ -24,12 +27,14 @@ export function TeamMemberCard({
   icon,
   experience,
   projects,
+  linkedin,
+  github,
 }: TeamMemberCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
     <Card
-      className="group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 border-border bg-card"
+      className=" relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 border-border bg-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -80,6 +85,40 @@ export function TeamMemberCard({
             ))}
           </div>
         </div>
+
+        {/* Sección de enlaces sociales */}
+        {(linkedin || github) && (
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3">Conecta</h4>
+            <div className="flex items-center gap-3">
+              {linkedin && (
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn de ${name}`}
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span className="hidden sm:inline">LinkedIn</span>
+                </a>
+              )}
+
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`GitHub de ${name}`}
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                  <span className="hidden sm:inline">GitHub</span>
+                </a>
+              )}
+            </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   )

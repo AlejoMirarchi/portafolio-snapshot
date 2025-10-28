@@ -70,13 +70,7 @@ export function Header() {
             >
               Equipo
             </button>
-            <Button
-              onClick={() => scrollToSection("contacto")}
-              size="sm"
-              className="bg-linear-to-r from-primary to-accent hover:opacity-90"
-            >
-              Contacto
-            </Button>
+            
           </nav>
 
           {/* Mobile Menu Button */}
