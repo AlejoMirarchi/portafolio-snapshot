@@ -2,15 +2,16 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import type { LucideIcon } from "lucide-react"
 import { useState } from "react"
+import {motion} from "framer-motion"
+import React from "react" // Importamos React para habilitar el espacio de nombres JSX
 
 interface TeamMemberCardProps {
   name: string
   role: string
   description: string
   skills: string[]
-  icon: LucideIcon
+  icon: JSX.Element // Cambiamos el tipo de LucideIcon a JSX.Element
   experience: string
   projects: string
 }
@@ -20,7 +21,7 @@ export function TeamMemberCard({
   role,
   description,
   skills,
-  icon: Icon,
+  icon,
   experience,
   projects,
 }: TeamMemberCardProps) {
@@ -42,7 +43,7 @@ export function TeamMemberCard({
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Icon className="w-6 h-6 text-primary" />
+              {icon} {/* Renderizamos el nodo JSX directamente */}
             </div>
             <div>
               <h3 className="text-xl font-semibold text-foreground">{name}</h3>
