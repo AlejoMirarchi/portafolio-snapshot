@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,8 +21,33 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-sm" />
-            <span className="text-xl font-semibold text-foreground">Portfolio</span>
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              className="w-8 h-8 text-primary"
+            >
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              
+            </motion.svg>
+            <motion.span
+              className="text-xl font-semibold text-blue-200"
+              
+              initial={{ opacity: 1, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
+            >
+              Portafolio
+            </motion.span>
           </div>
 
           {/* Desktop Navigation */}
@@ -47,7 +73,7 @@ export function Header() {
             <Button
               onClick={() => scrollToSection("contacto")}
               size="sm"
-              className="bg-gradient-to-r from-primary to-accent hover:opacity-90"
+              className="bg-linear-to-r from-primary to-accent hover:opacity-90"
             >
               Contacto
             </Button>
@@ -84,7 +110,7 @@ export function Header() {
               <Button
                 onClick={() => scrollToSection("contacto")}
                 size="sm"
-                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90"
+                className="w-full bg-linear-to-r from-primary to-accent hover:opacity-90"
               >
                 Contacto
               </Button>

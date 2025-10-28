@@ -1,8 +1,10 @@
+import { Reveal } from "@/components/reveal"
+
 export function Hero() {
   return (
     <section id="inicio" className="relative pt-32 pb-20 px-4 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+  <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-background to-accent/10" />
         <svg
           className="absolute bottom-0 left-0 w-full h-64 opacity-20"
           viewBox="0 0 1440 320"
@@ -24,14 +26,18 @@ export function Hero() {
 
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground text-balance">
-            Nuestro Equipo de{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Profesionales</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Conoce a los expertos que impulsan la innovación y la excelencia en cada proyecto. Combinamos talento,
-            experiencia y pasión para crear soluciones excepcionales.
-          </p>
+          <Reveal>
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground text-balance">
+              Nuestro Equipo de{" "}
+              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Profesionales</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+              Conoce a los expertos que impulsan la innovación y la excelencia en cada proyecto. Combinamos talento,
+              experiencia y pasión para crear soluciones excepcionales.
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>

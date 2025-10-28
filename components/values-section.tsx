@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/reveal"
+
 export function ValuesSection() {
   const values = [
     {
@@ -60,9 +62,9 @@ export function ValuesSection() {
   ]
 
   return (
-    <section className="relative py-20 px-4 lg:px-8 overflow-hidden">
+  <section className="relative py-20 px-4 lg:px-8 overflow-hidden">
       {/* Fondo con gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background -z-10" />
+  <div className="absolute inset-0 bg-linear-to-b from-background via-primary/5 to-background -z-10" />
 
       {/* SVG decorativo geométrico */}
       <div className="absolute top-1/2 left-0 w-64 h-64 -translate-y-1/2 opacity-10 -z-10">
@@ -93,34 +95,39 @@ export function ValuesSection() {
 
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Nuestros{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Valores
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Los principios fundamentales que guían nuestro trabajo y definen nuestra cultura organizacional.
-          </p>
+          <Reveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              Nuestros{" "}
+              <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                Valores
+              </span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              Los principios fundamentales que guían nuestro trabajo y definen nuestra cultura organizacional.
+            </p>
+          </Reveal>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((value, index) => (
-            <div
-              key={index}
-              className="group relative bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-            >
+            <Reveal key={index} delay={index * 0.05}>
+              <div
+                className="group relative bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+              >
               {/* Gradiente de fondo en hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 rounded-xl transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 rounded-xl transition-all duration-300" />
 
               <div className="relative space-y-4">
-                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center text-primary-foreground transform group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{value.title}</h3>
                 <p className="text-muted-foreground text-pretty leading-relaxed">{value.description}</p>
               </div>
-            </div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

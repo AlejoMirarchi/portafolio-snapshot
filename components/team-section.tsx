@@ -1,4 +1,5 @@
 import { TeamMemberCard } from "@/components/team-member-card"
+import { Reveal } from "@/components/reveal"
 import { Code, Palette, Database } from "lucide-react"
 
 const teamMembers = [
@@ -60,18 +61,24 @@ export function TeamSection() {
 		<section id="equipo" className="py-20 px-4 lg:px-8 bg-muted/30">
 			<div className="container mx-auto max-w-7xl">
 				<div className="text-center mb-16 space-y-4">
-					<h2 className="text-4xl md:text-5xl font-bold text-foreground">
-						Conoce al Equipo
-					</h2>
-					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-						Profesionales apasionados por la tecnología y comprometidos con la
-						excelencia
-					</p>
+					<Reveal>
+						<h2 className="text-4xl md:text-5xl font-bold text-foreground">
+							Conoce al Equipo
+						</h2>
+					</Reveal>
+					<Reveal delay={0.1}>
+						<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+							Profesionales apasionados por la tecnología y comprometidos con la
+							excelencia
+						</p>
+					</Reveal>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{teamMembers.map((member, index) => (
-						<TeamMemberCard key={index} {...member} />
+						<Reveal key={index} delay={index * 0.08}>
+							<TeamMemberCard {...member} />
+						</Reveal>
 					))}
 				</div>
 			</div>

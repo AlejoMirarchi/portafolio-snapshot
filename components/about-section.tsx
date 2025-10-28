@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/reveal"
+
 export function AboutSection() {
   return (
     <section id="nosotros" className="relative py-20 px-4 lg:px-8 overflow-hidden">
@@ -19,26 +21,33 @@ export function AboutSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Sobre{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Nosotros</span>
-            </h2>
-            <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-              Somos un equipo multidisciplinario de profesionales apasionados por la tecnología y la innovación. Con
-              años de experiencia combinada, nos especializamos en crear soluciones digitales que transforman negocios y
-              mejoran la vida de las personas.
-            </p>
-            <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-              Nuestra misión es llevar cada proyecto al siguiente nivel, combinando creatividad, experiencia técnica y
-              un enfoque centrado en el usuario para entregar resultados excepcionales que superen las expectativas.
-            </p>
+            <Reveal>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Sobre{" "}
+                <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Nosotros</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                Somos un equipo multidisciplinario de profesionales apasionados por la tecnología y la innovación. Con
+                años de experiencia combinada, nos especializamos en crear soluciones digitales que transforman negocios y
+                mejoran la vida de las personas.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                Nuestra misión es llevar cada proyecto al siguiente nivel, combinando creatividad, experiencia técnica y
+                un enfoque centrado en el usuario para entregar resultados excepcionales que superen las expectativas.
+              </p>
+            </Reveal>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-3xl" />
+            <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20 rounded-2xl blur-3xl" />
             <div className="relative bg-card border border-border rounded-2xl p-8 space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+              <Reveal direction="left">
+                <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center shrink-0">
                   <svg
                     className="w-6 h-6 text-primary-foreground"
                     fill="none"
@@ -54,10 +63,12 @@ export function AboutSection() {
                     Siempre a la vanguardia de las últimas tecnologías y tendencias del mercado.
                   </p>
                 </div>
-              </div>
+                </div>
+              </Reveal>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
+              <Reveal delay={0.05} direction="left">
+                <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-accent to-primary flex items-center justify-center shrink-0">
                   <svg className="w-6 h-6 text-accent-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       strokeLinecap="round"
@@ -73,10 +84,12 @@ export function AboutSection() {
                     Cada proyecto es tratado con el máximo nivel de profesionalismo y atención al detalle.
                   </p>
                 </div>
-              </div>
+                </div>
+              </Reveal>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+              <Reveal delay={0.1} direction="left">
+                <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center shrink-0">
                   <svg
                     className="w-6 h-6 text-primary-foreground"
                     fill="none"
@@ -97,7 +110,8 @@ export function AboutSection() {
                     Colaboración efectiva que potencia las fortalezas individuales de cada miembro.
                   </p>
                 </div>
-              </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
