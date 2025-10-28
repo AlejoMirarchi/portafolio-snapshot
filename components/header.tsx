@@ -21,28 +21,30 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <motion.svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
+            <motion.div
               className="w-8 h-8 text-primary"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear", repeat: Infinity }}
             >
-              <motion.circle
-                cx="50"
-                cy="50"
-                r="40"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="4"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
-              />
-              
-            </motion.svg>
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M8.757 15.243l-2.121 2.121m12.728 0l-2.121-2.121M8.757 8.757L6.636 6.636"
+                />
+              </svg>
+            </motion.div>
             <motion.span
               className="text-xl font-semibold text-blue-200"
               
-              initial={{ opacity: 1, x: 10 }}
+              initial={{ opacity: 1, x: 5 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
             >

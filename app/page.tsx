@@ -6,6 +6,7 @@ import { GitHubSection } from "@/components/github-section"
 import { AboutSection } from "@/components/about-section"
 import { ValuesSection } from "@/components/values-section"
 import { Footer } from "@/components/footer"
+import PreguntasFrecuentes from "@/components/preguntas-frecuentes"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ValuesSection />
   <GitHubSection />
       <TeamSection />
+      <PreguntasFrecuentes />
       <Footer />
     </main>
   )
