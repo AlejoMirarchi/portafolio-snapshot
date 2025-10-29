@@ -122,3 +122,187 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Frutiger Aero: estilo reutilizable para secciones con glassmorphism + tipografía cercana a Frutiger */
+@layer components {
+  .frutiger-aero {
+    font-family: 'Frutiger', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .frutiger-aero .aero-panel {
+    /* Usar la imagen como fondo del panel (solo AbrilPage) en lugar de transparencia */
+    background-image: var(--aero-bg-url), linear-gradient(135deg, rgba(12,12,12,0.45), rgba(6,182,212,0.06));
+    background-size: cover, cover;
+    background-position: center center, center center;
+    /* mezclar la capa de color encima de la imagen para mejorar legibilidad */
+    background-blend-mode: overlay;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  /* Background image support: use the image saved under public/aero-bg.jpg */
+  :root {
+    --aero-bg-url: url('/aero-bg.jpg');
+  }
+
+  .frutiger-aero {
+    /* No aplicar imagen en la sección; la imagen se aplica solo al .aero-panel */
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    padding: 2rem 0; /* espacio alrededor del panel */
+  }
+
+  /* Window-style controls (mac / win7 look) */
+  .frutiger-aero .aero-window-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .frutiger-aero .aero-window-controls .aero-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* Mac style: red, yellow, green */
+  .frutiger-aero .aero-controls-mac .aero-btn.red { background: linear-gradient(#ff6b6b,#ff3b3b); }
+  .frutiger-aero .aero-controls-mac .aero-btn.yellow { background: linear-gradient(#ffd46b,#ffc23b); }
+  .frutiger-aero .aero-controls-mac .aero-btn.green { background: linear-gradient(#7be28b,#39d05b); }
+
+  /* Win7 style: small rectangular glossy buttons (use modifier) */
+  .frutiger-aero .aero-controls-win .aero-btn {
+    width: 28px;
+    height: 14px;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 2px 6px rgba(2,6,23,0.08);
+    transform: translateY(0.5px);
+  }
+
+  .frutiger-aero .aero-controls-win .aero-btn.win-min { background: linear-gradient(#f3f3f3,#e6e6e6); }
+  .frutiger-aero .aero-controls-win .aero-btn.win-max { background: linear-gradient(#f0f7ff,#dfeeff); }
+  .frutiger-aero .aero-controls-win .aero-btn.win-close { background: linear-gradient(#ffd6d6,#ffbdbd); }
+
+  /* Window-like CTA/button (glass + bevel) */
+  .frutiger-aero .aero-window-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    color: var(--color-card-foreground);
+    /* vidrio oscuro: fondo semi-transparente oscuro + ligera iluminación superior */
+    background-color: rgba(0,0,0,0.30);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    background-blend-mode: overlay;
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.14);
+    font-weight: 600;
+    transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease;
+  }
+
+  .frutiger-aero .aero-window-btn.primary {
+    /* primary también como vidrio oscuro pero un poco más opaco */
+    background-color: rgba(0,0,0,0.42);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    background-blend-mode: overlay;
+    color: var(--color-card-foreground);
+    box-shadow: 0 10px 26px rgba(2,6,23,0.18);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* Hover / active states para botones */
+  .frutiger-aero .aero-window-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(2,6,23,0.16);
+    filter: brightness(1.06);
+    background-color: rgba(0,0,0,0.36);
+  }
+
+  .frutiger-aero .aero-window-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(2,6,23,0.22);
+    filter: brightness(1.08);
+    background-color: rgba(0,0,0,0.48);
+  }
+
+  /* También aplicar estilo similar a .aero-cta si se usa */
+  .frutiger-aero a.aero-cta {
+    background-color: rgba(0,0,0,0.32);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    background-blend-mode: overlay;
+    color: var(--color-card-foreground);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    transition: transform 120ms ease, filter 120ms ease;
+  }
+  .frutiger-aero a.aero-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    background-color: rgba(0,0,0,0.38);
+  }
+
+  .frutiger-aero .aero-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 1.05;
+    background: linear-gradient(90deg,#7C3AED,#06B6D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .frutiger-aero .aero-sub {
+    color: var(--color-muted-foreground);
+    font-size: 0.95rem;
+  }
+
+  .frutiger-aero .aero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+
+/* Override colored utility classes ONLY inside Abril page (.frutiger-aero)
+   Make any utility bg-* or colored inline-flex links appear neutral (glass) here. */
+.frutiger-aero a[class*="bg-"] , .frutiger-aero button[class*="bg-"] ,
+.frutiger-aero a.inline-flex, .frutiger-aero button.inline-flex {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--color-card-foreground) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Ensure icon colors inside those buttons are visible (white-ish) */
+.frutiger-aero a.inline-flex svg, .frutiger-aero a[class*="bg-"] svg,
+.frutiger-aero .aero-window-btn svg {
+  color: var(--color-card-foreground) !important;
+}
+    background: linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.06));
+    border: 1px solid rgba(124,58,237,0.08);
+    color: var(--color-foreground);
+    font-size: 0.875rem;
+  }
+
+  .frutiger-aero a.aero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg,#7C3AED,#06B6D4);
+    color: white;
+    font-weight: 600;
+  }
+}

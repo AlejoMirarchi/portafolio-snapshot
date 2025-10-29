@@ -95,9 +95,12 @@ export function Header() {
               <Link href="/alejopage" className="text-primary/50 font-medium hover:text-primary/80 transition-colors">
                 Alejo
               </Link>
+               <Link href="/abrilpage" className="text-primary/50 text-fuxia-500/50 font-medium hover:text-primary/80 transition-colors">
+                Abril
+              </Link>
             <motion.button
               onClick={() => scrollToSection("inicio")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground  hover:text-foreground transition-colors"
               whileHover="hover"
             >
               Inicio
