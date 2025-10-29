@@ -45,7 +45,7 @@ const Member: React.FC<MemberProps> = ({
   }, [name]);
 
   return (
-    <div className="relative rounded-xl border border-border bg-red/80 backdrop-blur p-6 shadow-lg shadow-primary/10">
+    <div className="relative rounded-xl border border-border bg-card/80 backdrop-blur p-6 shadow-lg shadow-primary/10">
       {/* Glow ring avatar */}
       <div className="mx-auto w-32 h-32 rounded-full p-0.5 bg-linear-to-r from-primary to-accent shadow-md shadow-primary/20">
         <img

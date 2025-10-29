@@ -89,9 +89,12 @@ export function Header() {
             animate="visible"
             whileHover="hover"
             >
-            <Link href="/alejopage" className="text-primary/50 font-medium hover:text-primary/80 transition-colors">
-              Alejo
-            </Link>
+              <Link href="/lucaspage" className="text-purple-500/50 font-medium hover:text-purple-900/80 transition-colors">
+                Lucas
+              </Link>
+              <Link href="/alejopage" className="text-primary/50 font-medium hover:text-primary/80 transition-colors">
+                Alejo
+              </Link>
             <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
