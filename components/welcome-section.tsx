@@ -13,9 +13,12 @@ export function WelcomeSection() {
         aria-hidden
         className="absolute -top-10 -right-10 w-64 h-64 text-primary/20"
         viewBox="0 0 200 200"
-        initial={{ rotate: -8, opacity: 0 }}
-        animate={{ rotate: 0, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        initial={{ rotate: -8, opacity: 0, path:0 }}
+        animate={{ rotate: 0, opacity: 1, path:1 }}
+        transition={{ duration: 1.2, ease: "easeOut",
+      
+         }}
+
       >
         <path
           d="M47.5,-59.6C59.6,-53.6,66,-39.3,69.7,-25.4C73.3,-11.5,74.2,2.1,70.3,14.6C66.4,27.1,57.6,38.5,46.6,49.1C35.5,59.6,22.2,69.2,7.2,74.1C-7.9,79.1,-23.6,79.3,-37.4,73.9C-51.1,68.5,-62.9,57.5,-70.8,44.1C-78.7,30.7,-82.8,15.4,-82.2,0.4C-81.6,-14.6,-76.4,-29.2,-67.5,-40C-58.6,-50.7,-46,-57.7,-33.2,-63.2C-20.3,-68.8,-10.2,-73,2.3,-76.6C14.8,-80.2,29.6,-83.2,47.5,-59.6Z"
