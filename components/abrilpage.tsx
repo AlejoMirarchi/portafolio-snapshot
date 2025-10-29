@@ -4,13 +4,12 @@ import Link from "next/link"
 import Member, { MemberProps } from "@/components/member"
 import { Code, Briefcase, Mail, ExternalLink, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
-
 const abrilData: MemberProps = {
   name: "Abril",
   role: "Ingeniera de datos",
   bio: "Experta en análisis de datos y machine learning. Transforma datos complejos en insights accionables para impulsar decisiones estratégicas.",
- 
-  image: "",
+
+  image: "/fotoperfilgato.jpg",
   location: "Buenos Aires, AR",
   experienceYears: 3,
   // Reemplazado: lenguajes de front -> programas gestores de bases de datos (DBMS)
@@ -33,19 +32,13 @@ const animationsVariants= {
 }
 
 const AbrilPage = () => {
+
   return (
     <section className="frutiger-aero">
       <div className="container mx-auto py-10">
         <div className="aero-panel">
-          {/* Controles de ventana: Mac (círculos) y Win (botones) */}
-          <div className="aero-window-controls">
-            
-            <div className="aero-controls-win ml-auto hidden sm:flex" aria-hidden>
-              <span className="aero-btn win-min" />
-              <span className="aero-btn win-max" />
-              <span className="aero-btn win-close" />
-            </div>
-          </div>
+          {/* Controles de ventana eliminados según petición (simulación Mac/Win) */}
+          {/* control de color removido (Button Hue) */}
       <motion.div className="mb-10 flex items-center justify-between"
       variants={animationsVariants}
       initial="hidden"
@@ -54,7 +47,7 @@ const AbrilPage = () => {
 
         <Link
           href="/"
-          className="inline-flex bg-primary/70 items-center rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground hover:bg-primary/30 transition-colors"
+          className="aero aero-window-btn inline-flex items-center rounded-md border border-border px-3 py-1.5 text-sm font-medium"
         >
           ← Volver al inicio
         </Link>
@@ -107,7 +100,15 @@ const AbrilPage = () => {
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2"
               >
                 {abrilData.skills?.map((skill) => (
-                  <span key={skill} className="aero-badge">{skill}</span>
+                  /* Mismo estilo que los botones, pero TRANSPARENTE.
+                     Usamos aero-window-btn para la forma/sombra y forzamos fondo transparente. */
+                  <span
+                    key={skill}
+                    className="aero-window-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-sm text-muted-foreground"
+                    style={{ backgroundColor: 'transparent' }}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </motion.div>
             </div>
@@ -117,7 +118,7 @@ const AbrilPage = () => {
               variants={animationsVariants}
               initial="hidden"
               animate="visible"
-              className="rounded-xl border border-border bg-card/70 p-6 shadow-lg shadow-primary/10"
+              className="rounded-xl  border border-border bg-card/70 p-6 shadow-lg shadow-primary/10"
             >
               <div className="flex items-center gap-2 mb-4">
                 <Briefcase className="w-5 h-5 text-primary" />
@@ -127,7 +128,8 @@ const AbrilPage = () => {
                 {abrilData.socialLinks.email && (
                   <a
                     href={`mailto:${abrilData.socialLinks.email}`}
-                    className="aero-window-btn primary"
+                    className="aero-window-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-sm text-muted-foreground"
+                    style={{ backgroundColor: 'transparent' }}
                   >
                     <Mail className="w-4 h-4" /> {abrilData.socialLinks.email}
                   </a>
@@ -137,7 +139,8 @@ const AbrilPage = () => {
                     href={abrilData.socialLinks.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="aero-window-btn"
+                    className="aero-window-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-sm text-muted-foreground"
+                    style={{ backgroundColor: 'transparent' }}
                   >
                     <ExternalLink className="w-4 h-4" /> {abrilData.socialLinks.website}
                   </a>
