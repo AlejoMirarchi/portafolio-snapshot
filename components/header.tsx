@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
+import Link from "next/link"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,6 +15,34 @@ export function Header() {
       element.scrollIntoView({ behavior: "smooth" })
       setIsMenuOpen(false)
     }
+  }
+  const navVariants: Variants = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+        delay: 0.2,
+      },
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+      
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        type: "tween",
+        duration: 0.25,
+        ease: "easeInOut",
+      },
+    },
   }
 
   return (
@@ -53,27 +82,38 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button
+            <motion.nav
+            className="hidden md:flex items-center gap-8"
+            variants={navVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            >
+            <Link href="/alejopage" className="text-primary/50 font-medium hover:text-primary/80 transition-colors">
+              Alejo
+            </Link>
+            <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              whileHover="hover"
             >
               Inicio
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => scrollToSection("nosotros")}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              whileHover="hover"
             >
               Nosotros
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => scrollToSection("equipo")}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              whileHover="hover"
             >
               Equipo
-            </button>
-            
-          </nav>
+            </motion.button>
+            </motion.nav>
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground">

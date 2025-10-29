@@ -31,7 +31,6 @@ function PreguntasFrecuentes() {
   return (
     
     <section className='py-10 mt-auto mb-10 px-4 lg:px-8 bg-muted/30 shadow-lg shadow-primary/30'>
-    
       <div className='container mx-auto max-w-4xl'>
         <div className='text-center mb-12'>
         <h1 className="text-6xl text-center font-bold text-foreground ">
