@@ -104,7 +104,7 @@ const LucasPage = () => {
               variants={animationsVariants}
               initial="hidden"
               animate="visible"
-              className="rounded-xl border border-purple-600 border-purple-600/40 bg-primary-800/30 p-6 shadow-lg shadow-purple-900/10"
+              className="rounded-xl border  border-purple-600/40 bg-primary-800/30 p-6 shadow-lg shadow-purple-900/10"
             >
               <div className="flex items-center gap-2 mb-4">
                 <Briefcase className="w-5 h-5 text-purple-400" />
