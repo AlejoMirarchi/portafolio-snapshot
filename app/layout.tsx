@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: "Portfolio - Equipo Profesional",
   description: "Conoce a nuestro equipo de profesionales expertos en desarrollo, diseño y datos",
   generator: "v0.app",
+  icons: {
+    // Use the placeholder logo in /public as the favicon and shortcut icon.
+    icon: [
+      { url: "/ramos.jpg", type: "image/png" },
+    ],
+    shortcut: "/ramos.jpg",
+    apple: "/ramos.jpg",
+  },
 }
 
 export default function RootLayout({

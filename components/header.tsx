@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, Variants, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import { NavLink } from "@/components/nav-link"
+import { Code, User, Star } from "lucide-react"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -118,15 +120,15 @@ export function Header() {
             animate="visible"
             whileHover="hover"
             >
-              <Link href="/lucaspage" className=" text-sm font-medium text-purple-500/50 hover:text-purple-900/80 transition-colors">
+              <NavLink href="/lucaspage" icon={<Code className="w-4 h-4" />} className="text-sm font-medium text-purple-500/50 hover:text-purple-900/80 transition-colors">
                 Lucas
-              </Link>
-              <Link href="/alejopage" className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
+              </NavLink>
+              <NavLink href="/alejopage" icon={<Code className="w-4 h-4" />} className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
                 Alejo
-              </Link>
-               <Link href="/abrilpage" className=" text-sm  text-primary/50 text-fuxia-500/50 font-medium hover:text-primary/80 transition-colors">
+              </NavLink>
+              <NavLink href="/abrilpage" icon={<Code className="w-4 h-4" />} className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
                 Abril
-              </Link>
+              </NavLink>
             <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground  hover:text-foreground transition-colors"
@@ -161,27 +163,30 @@ export function Header() {
           <nav className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {/* Añadidos: enlaces a las páginas de Lucas, Alejo y Abril */}
-              <Link
+              <NavLink
                 href="/lucaspage"
+                icon={<Code className="w-4 h-4" />}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Lucas
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 href="/alejopage"
+                icon={<User className="w-4 h-4" />}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Alejo
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 href="/abrilpage"
+                icon={<Star className="w-4 h-4" />}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Abril
-              </Link>
+              </NavLink>
 
               <button
                 onClick={() => scrollToSection("inicio")}
