@@ -21,25 +21,25 @@ export function AboutSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <Reveal>
+            
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 Sobre{" "}
                 <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Nosotros</span>
               </h2>
-            </Reveal>
-            <Reveal delay={0.05}>
+            
+            
               <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
                 Somos un equipo multidisciplinario de profesionales apasionados por la tecnología y la innovación. Con
                 años de experiencia combinada, nos especializamos en crear soluciones digitales que transforman negocios y
                 mejoran la vida de las personas.
               </p>
-            </Reveal>
-            <Reveal delay={0.1}>
+            
+            
               <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
                 Nuestra misión es llevar cada proyecto al siguiente nivel, combinando creatividad, experiencia técnica y
                 un enfoque centrado en el usuario para entregar resultados excepcionales que superen las expectativas.
               </p>
-            </Reveal>
+            
           </div>
 
           <div className="relative">
@@ -87,7 +87,7 @@ export function AboutSection() {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.1} direction="left">
+              
                 <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center shrink-0">
                   <svg
@@ -111,7 +111,7 @@ export function AboutSection() {
                   </p>
                 </div>
                 </div>
-              </Reveal>
+              
             </div>
           </div>
         </div>

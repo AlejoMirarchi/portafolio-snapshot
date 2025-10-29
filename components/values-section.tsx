@@ -95,19 +95,19 @@ export function ValuesSection() {
 
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <Reveal>
+       
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               Nuestros{" "}
               <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Valores
               </span>
             </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
+       
+       
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
               Los principios fundamentales que guían nuestro trabajo y definen nuestra cultura organizacional.
             </p>
-          </Reveal>
+       
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -26,18 +26,18 @@ export function Hero() {
 
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-6">
-          <Reveal>
+          
             <h1 className="text-5xl md:text-7xl font-bold text-foreground text-balance">
               Nuestro Equipo de{" "}
               <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Profesionales</span>
             </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
+          
+          
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
               Conoce a los expertos que impulsan la innovación y la excelencia en cada proyecto. Combinamos talento,
               experiencia y pasión para crear soluciones excepcionales.
             </p>
-          </Reveal>
+          
         </div>
       </div>
     </section>
