@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, Variants, AnimatePresence } from "framer-motion"
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion"
 import Link from "next/link"
 import { NavLink } from "@/components/nav-link"
 import { Code, User, Star } from "lucide-react"
@@ -11,6 +12,7 @@ import { Code, User, Star } from "lucide-react"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const reduced = usePrefersReducedMotion()
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -88,13 +90,17 @@ export function Header() {
               <motion.span
                 className="text-xl font-semibold"
                 style={{ color: "#0b3d91" }}
-                initial={{ opacity: 1, x: 5 }}
-                animate={{
-                  // From dark blue to light blue and back
-                  color: ["#0b3d91", "#1e40af", "#2563eb", "#60a5fa", "#bfdbfe", "#0b3d91"],
-                  x: 0,
-                }}
-                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+                initial={reduced ? { opacity: 1 } : { opacity: 1, x: 5 }}
+                animate={
+                  reduced
+                    ? undefined
+                    : {
+                        // From dark blue to light blue and back
+                        color: ["#0b3d91", "#1e40af", "#2563eb", "#60a5fa", "#bfdbfe", "#0b3d91"],
+                        x: 0,
+                      }
+                }
+                transition={reduced ? undefined : { duration: 6, ease: "easeInOut", repeat: Infinity }}
               >
                 MonsterCoders
               </motion.span>
@@ -219,8 +225,8 @@ export function Header() {
         {/* animate presense para animar cuando sale del dom y usestate verificacion */}
         <AnimatePresence>
           {isContactOpen && (
-            <motion.div 
-              className="fixed bg-primary/10 backdrop-blur-2xl inset-0 flex items-center justify-center"
+            <motion.div
+              className="fixed bg-primary/10 md:backdrop-blur-2xl inset-0 flex items-center justify-center"
               style={{ zIndex: 9999 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
