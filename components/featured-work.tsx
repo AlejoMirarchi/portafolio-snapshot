@@ -51,7 +51,7 @@ function FeaturedWork() {
             </span>
           </h1>
         </div>
-        <div className=" flex  gap-5 max-h-110 overflow-hidden">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredWorks.map((work) => (
             <TeamMemberCard
               key={work.title}
