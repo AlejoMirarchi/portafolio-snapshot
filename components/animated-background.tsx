@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion"
 
 type AnimatedBackgroundProps = {
   density?: number
@@ -9,7 +11,11 @@ type AnimatedBackgroundProps = {
 
 // Small, friendly animated SVG shapes that float subtly in the background
 export function AnimatedBackground({ density = 8, className = "" }: AnimatedBackgroundProps) {
-  const items = Array.from({ length: density })
+  const isMobile = useIsMobile()
+  const reduced = usePrefersReducedMotion()
+  // Lower density on mobile and disable entirely if prefers-reduced-motion.
+  const effectiveDensity = reduced ? 0 : Math.max(0, Math.round((isMobile ? 0.5 : 1) * density))
+  const items = Array.from({ length: effectiveDensity })
 
   return (
     <div
@@ -37,11 +43,11 @@ export function AnimatedBackground({ density = 8, className = "" }: AnimatedBack
             width={size}
             height={size}
             viewBox="0 0 100 100"
-            className="absolute blur-[1px]"
+            className="absolute sm:blur-[1px]"
             style={{ left, top }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: [0, -8, 0] }}
-            transition={{ duration, delay, repeat: Infinity, ease: "easeInOut" }}
+            initial={reduced ? undefined : { opacity: 0, y: 10 }}
+            animate={reduced ? undefined : { opacity: 1, y: [0, -8, 0] }}
+            transition={reduced ? undefined : { duration, delay, repeat: Infinity, ease: "easeInOut" }}
           >
             <defs>
               <linearGradient id={`grad-${i}`} x1="0" y1="0" x2="1" y2="1">
@@ -53,9 +59,9 @@ export function AnimatedBackground({ density = 8, className = "" }: AnimatedBack
             <motion.path
               d="M59.6,12.4c8.7,3.3,17.5,7.9,21.2,15.8c3.8,7.9,2.5,18.9-2.8,27.5c-5.3,8.6-14.3,14.9-24.3,18.2c-10,3.3-20.9,3.6-29.1-1.7C16.3,68.8,10.8,57.7,9.4,46.3C8,34.9,10.7,23.2,17.3,16c6.6-7.2,17.2-10.1,27.1-10C54.3,6.2,57.7,9.1,59.6,12.4z"
               fill={`url(#grad-${i})`}
-              initial={{ rotate: 0 }}
-              animate={{ rotate: [0, 6, -4, 0] }}
-              transition={{ duration: duration * 2, delay: delay / 2, repeat: Infinity, ease: "easeInOut" }}
+              initial={reduced ? undefined : { rotate: 0 }}
+              animate={reduced ? undefined : { rotate: [0, 6, -4, 0] }}
+              transition={reduced ? undefined : { duration: duration * 2, delay: delay / 2, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.svg>
         )
