@@ -45,7 +45,7 @@ export function WelcomeSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Creamos productos con un toque humano
+          Creamos productos modernos y funcionales.
         </motion.h1>
 
         <motion.p

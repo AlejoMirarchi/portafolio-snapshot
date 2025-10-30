@@ -5,7 +5,7 @@ import { Code, Palette, Database } from "lucide-react"
 const teamMembers = [
 	{
 		name: "Lucas Ramos",
-		role: "Desarrolladora Full Stack",
+		role: "Desarrollador Full Stack",
 		description:
 			"Especialista en arquitecturas escalables y desarrollo de aplicaciones web modernas. Con más de 8 años de experiencia en React, Node.js y cloud computing.",
 		skills: [
@@ -15,6 +15,7 @@ const teamMembers = [
 			"AWS & Azure",
 			"Microservicios",
 			"CI/CD",
+			"MongoDB Expert",
 		],
 		icon: <Code className="w-6 h-6 text-primary" />, // Renderizamos el icono aquí
 		experience: "8+ años",
