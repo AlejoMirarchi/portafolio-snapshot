@@ -5,6 +5,7 @@ import Link from "next/link";
 import Member, { MemberProps } from "@/components/member";
 import { Code, Briefcase, Mail, ExternalLink, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import AnimatedBackground from "@/components/animated-background"
 
 const alejoData: MemberProps = {
   name: "Alejo",
@@ -24,18 +25,13 @@ const alejoData: MemberProps = {
   },
 };
 const animationsVariants= {
-  hidden: { opacity: 0, y: 20 
-    
-  },
-  visible: { opacity: 1, y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
-  
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
 const AlejoPage = () => {
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 backdrop-blur-lg">
       <motion.div className="mb-10 flex items-center justify-between"
       variants={animationsVariants}
       initial="hidden"
@@ -53,9 +49,10 @@ const AlejoPage = () => {
         </div>
       </motion.div>
 
-      {/* Fondo sutil con gradiente */}
+      {/* Fondo sutil con gradiente + animación */}
       <div className="relative">
-        <div className="absolute inset-0 -z-10 bg-linear-to-b from-primary/5 via-background to-background rounded-2xl" />
+  <AnimatedBackground density={6} />
+  <div className="absolute inset-0 -z-30 bg-linear-to-b from-primary/5 via-background to-background rounded-2xl" />
 
         {/* Grid principal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -132,7 +129,7 @@ const AlejoPage = () => {
                     href={alejoData.socialLinks.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 hover:bg-accent/10 transition-colors"
+                    className="inline-flex backdrop-blur-lg items-center gap-2 rounded-md border border-border px-3 py-2 hover:bg-accent/10 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" /> {alejoData.socialLinks.website}
                   </a>

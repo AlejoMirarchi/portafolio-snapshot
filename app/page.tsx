@@ -8,6 +8,7 @@ import { ValuesSection } from "@/components/values-section"
 import { Footer } from "@/components/footer"
 import PreguntasFrecuentes from "@/components/preguntas-frecuentes"
 import FeaturedWork from "@/components/featured-work"
+import FlyOutMenu from "@/components/FlyOutMenu"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <TeamSection />
       <FeaturedWork />
       <PreguntasFrecuentes />
+      
       <Footer />
     </main>
   )

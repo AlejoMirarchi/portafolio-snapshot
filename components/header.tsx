@@ -8,6 +8,8 @@ import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion"
 import Link from "next/link"
 import { NavLink } from "@/components/nav-link"
 import { Code, User, Star } from "lucide-react"
+import FlyOutMenu from "./FlyOutMenuFixed"
+import FlyOutMenuFixed from "./FlyOutMenuFixed"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -106,17 +108,9 @@ export function Header() {
               </motion.span>
             
           </div>
+          
 
-          {/* Desktop Contact button */}
-          <div className="hidden md:flex flex-row items-center">
-            <motion.button
-              onClick={() => setIsContactOpen(true)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mr-4"
-              whileHover={{ scale: 1.03 }}
-            >
-              Contacto
-            </motion.button>
-          </div>
+          {/* Desktop Contact button removed - kept only in mobile menu (user will add a custom desktop CTA) */}
 
           {/* Desktop Navigation */}
             <motion.nav
@@ -135,6 +129,7 @@ export function Header() {
               <NavLink href="/abrilpage" icon={<Code className="w-4 h-4" />} className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
                 Abril
               </NavLink>
+              <FlyOutMenuFixed/>
             <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground  hover:text-foreground transition-colors"

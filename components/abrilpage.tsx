@@ -4,6 +4,7 @@ import Link from "next/link"
 import Member, { MemberProps } from "@/components/member"
 import { Code, Briefcase, Mail, ExternalLink, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
+import AnimatedBackground from "@/components/animated-background"
 const abrilData: MemberProps = {
   name: "Abril",
   role: "Ingeniera de datos",
@@ -22,19 +23,14 @@ const abrilData: MemberProps = {
   },
 };
 const animationsVariants= {
-  hidden: { opacity: 0, y: 20 
-    
-  },
-  visible: { opacity: 1, y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
-  
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
 const AbrilPage = () => {
 
   return (
-    <section className="frutiger-aero">
+    <section className="frutiger-aero backdrop-blur-lg">
       <div className="container mx-auto py-10">
         <div className="aero-panel">
           {/* Controles de ventana eliminados según petición (simulación Mac/Win) */}
@@ -58,7 +54,8 @@ const AbrilPage = () => {
 
       {/* Fondo sutil con gradiente */}
       <div className="relative">
-        <div className="absolute inset-0 -z-10 bg-linear-to-b from-primary/5 via-background to-background rounded-2xl" />
+  <AnimatedBackground density={6} />
+  <div className="absolute inset-0 -z-30 bg-linear-to-b from-primary/5 via-background to-background rounded-2xl" />
 
         {/* Grid principal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

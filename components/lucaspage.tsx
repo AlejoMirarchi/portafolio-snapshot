@@ -4,6 +4,7 @@ import Link from "next/link";
 import Member, { MemberProps } from "@/components/member";
 import { Code, Briefcase, Mail, ExternalLink, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import AnimatedBackground from "@/components/animated-background"
 
 const lucasData: MemberProps = {
   name: "Lucas",
@@ -31,7 +32,7 @@ const animationsVariants = {
 
 const LucasPage = () => {
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 backdrop-blur-lg">
       <motion.div
         className="mb-10 flex items-center justify-between"
         variants={animationsVariants}
@@ -50,7 +51,8 @@ const LucasPage = () => {
       </motion.div>
 
       <div className="relative">
-        <div className="absolute inset-0 -z-10 bg-linear-to-b from-blue-500/10 via-purple-400/20 to-purple-500/20 rounded-2xl" />
+  <AnimatedBackground density={6} />
+  <div className="absolute inset-0 -z-30 bg-linear-to-b from-blue-500/10 via-purple-400/20 to-purple-500/20 rounded-2xl" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <motion.div
