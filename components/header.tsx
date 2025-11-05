@@ -120,6 +120,7 @@ export function Header() {
             animate="visible"
             whileHover="hover"
             >
+              
               <NavLink href="/lucaspage" icon={<Code className="w-4 h-4" />} className="text-sm font-medium text-purple-500/50 hover:text-purple-900/80 transition-colors">
                 Lucas
               </NavLink>

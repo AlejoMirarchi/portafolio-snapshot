@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 import PreguntasFrecuentes from "@/components/preguntas-frecuentes"
 import FeaturedWork from "@/components/featured-work"
 import FlyOutMenu from "@/components/FlyOutMenu"
+import Parallax from "@/components/parallax"
 
 export default function Home() {
   return (

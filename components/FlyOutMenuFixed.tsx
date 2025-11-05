@@ -33,7 +33,7 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href = "#", flyoutCon
             setOpen((v) => !v)
           }
         }}
-        className=" text-l text-primary/70 hover:opacity-90"
+        className=" text-l   text-primary/70 hover:opacity-90"
       >
         {children}
         {flyoutContent ? <span aria-hidden className="ml-1">▾</span> : null}

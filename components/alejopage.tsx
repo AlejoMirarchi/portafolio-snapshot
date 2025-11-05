@@ -129,7 +129,7 @@ const AlejoPage = () => {
                     href={alejoData.socialLinks.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex backdrop-blur-lg items-center gap-2 rounded-md border border-border px-3 py-2 hover:bg-accent/10 transition-colors"
+                    className="inline-flex  items-center gap-2 rounded-md border border-border px-3 py-2 hover:bg-accent/10 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" /> {alejoData.socialLinks.website}
                   </a>
