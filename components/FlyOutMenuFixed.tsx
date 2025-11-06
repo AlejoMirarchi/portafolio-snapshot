@@ -46,7 +46,7 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href = "#", flyoutCon
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.16 }}
-            className="absolute left-0 mt-2 min-w-[160px] bg-[#0b1220] rounded-md shadow-lg ring-1 ring-black/10 z-50"
+            className="absolute left-0 mt-2 font-bold text-xs  rounded-md shadow-lg ring-1 ring-black/10 z-50"
             role="menu"
             aria-hidden={!open}
           >
@@ -64,11 +64,11 @@ const FlyOutMenuFixed: React.FC = () => {
       <FlyoutLink
         href="/contact"
         flyoutContent={
-          <Card className="w-72 max-w-xs p-0 overflow-hidden flex">
+          <Card className="w-72 max-w-xs p-0 overflow-hidden flex border-border bg-card/90 shadow-lg shadow-primary/20">
             <CardHeader className="px-4 py-3 bg-primary/10 ">
-              <CardTitle className="text-sm font-semibold text-white">Contacta conmigo</CardTitle>
+              <CardTitle className="text-sm font-semibold text-primary">Contacta conmigo</CardTitle>
             </CardHeader>
-            <CardDescription className="p-3 bg-primary/10 text-sm text-gray-100">
+            <CardDescription className="p-3 bg-primary/10 text-sm text-primary">
               <div className="grid grid-cols-1 gap-1">
                 <a
                   href="mailto:alejomirarchi@gmail.com"
