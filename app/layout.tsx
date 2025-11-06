@@ -9,16 +9,16 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio - Equipo Profesional",
+  title: "MonterCoders - Profesionales",
   description: "Conoce a nuestro equipo de profesionales expertos en desarrollo, diseño y datos",
   
   icons: {
-    // Use the placeholder logo in /public as the favicon and shortcut icon.
+    
     icon: [
-      { url: "/ramos.jpg", type: "image/png" },
+      { url: "/monster2.png", type: "image/png" },
     ],
-    shortcut: "/ramos.jpg",
-    apple: "/ramos.jpg",
+    shortcut: "/monster2.png",
+    apple: "/monster2.png",
   },
 }
 

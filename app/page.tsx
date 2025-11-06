@@ -10,12 +10,13 @@ import PreguntasFrecuentes from "@/components/preguntas-frecuentes"
 import FeaturedWork from "@/components/featured-work"
 import FlyOutMenu from "@/components/FlyOutMenu"
 import Parallax from "@/components/parallax"
+import MultilayerParallax from "@/components/multilayerparallax"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <WelcomeSection />
+      <MultilayerParallax />
       <Hero />
       <AboutSection />
       <ValuesSection />
@@ -23,7 +24,6 @@ export default function Home() {
       <TeamSection />
       <FeaturedWork />
       <PreguntasFrecuentes />
-      
       <Footer />
     </main>
   )
