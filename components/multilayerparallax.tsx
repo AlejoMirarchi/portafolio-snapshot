@@ -58,7 +58,7 @@ export default function MultilayerParallax() {
           Creamos productos modernos y funcionales 
         </h1>
 
-        {/* animated small icons / emojis */}
+        {/* svgs iconos wwwwwwewdasdasfkfasf*/}
         <div className="relative mx-auto mt-2 flex items-center justify-center gap-4">
           {[
             { key: "spark", color: "text-primary", path: "M12 2L9 9 2 12l7 3 3 7 3-7 7-3-7-3-3-7z" },
