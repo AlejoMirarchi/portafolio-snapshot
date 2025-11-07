@@ -10,6 +10,9 @@ import { NavLink } from "@/components/nav-link"
 import { Code, User, Star } from "lucide-react"
 import FlyOutMenu from "./FlyOutMenuFixed"
 import FlyOutMenuFixed from "./FlyOutMenuFixed"
+// ShiftingDropdownMenu is mounted at the page level (app/page.tsx) and listens to external events when enabled.
+// import { ShiftingDropdownMenu } from "./shiftingdropdownmenu"
+import ProfileAvatars from "./profile-avatars"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -63,7 +66,7 @@ export function Header() {
   }, [isContactOpen])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+  <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border overflow-visible">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
@@ -110,9 +113,15 @@ export function Header() {
           </div>
           
 
-          {/* Desktop Contact button removed - kept only in mobile menu (user will add a custom desktop CTA) */}
 
-          {/* Desktop Navigation */}
+
+
+
+
+            
+            
+            
+
             <motion.nav
             className="hidden md:flex items-center gap-8"
             variants={navVariants}
@@ -121,16 +130,19 @@ export function Header() {
             whileHover="hover"
             >
               
-              <NavLink href="/lucaspage" icon={<Code className="w-4 h-4" />} className="text-sm font-medium text-purple-500/50 hover:text-purple-900/80 transition-colors">
-                Lucas
-              </NavLink>
-              <NavLink href="/alejopage" icon={<Code className="w-4 h-4" />} className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
-                Alejo
-              </NavLink>
-              <NavLink href="/abrilpage" icon={<Code className="w-4 h-4" />} className="text-sm text-primary/50 font-medium hover:text-primary/80 transition-colors">
-                Abril
-              </NavLink>
-              <FlyOutMenuFixed/>
+              <div className="hidden md:flex items-center gap-3">
+                <ProfileAvatars
+                  avatars={[
+                    { name: "Alejo Mirarchi", src: "/cffbe951f74aae885fd7576960d442a0.jpg", href: "/alejopage", tabId: 1 },
+                    { name: "Lucas", src: "/ramos.jpg", href: "/lucaspage", tabId: 3 },
+                    { name: "Abril", src: "/fotoperfilgato.jpg", href: "/abrilpage", tabId: 2 },
+                  ]}
+                  size={45}
+                  showNames={false}
+                />
+              </div>
+              
+             
             <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground  hover:text-foreground transition-colors"
@@ -152,6 +164,13 @@ export function Header() {
             >
               Equipo
             </motion.button>
+              <Button
+                onClick={() => setIsContactOpen(true)}
+                size="sm"
+                className="hidden md:inline-flex bg-linear-to-r from-primary to-accent hover:opacity-90"
+              >
+                Contacto
+              </Button>
             </motion.nav>
 
           {/* Mobile Menu Button */} 
