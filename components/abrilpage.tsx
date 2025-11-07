@@ -10,15 +10,15 @@ const abrilData: MemberProps = {
   role: "Ingeniera de datos",
   bio: "Experta en análisis de datos y machine learning. Transforma datos complejos en insights accionables para impulsar decisiones estratégicas.",
 
-  image: "/fotoperfilgato.jpg",
+  image: "/abril.png",
   location: "Buenos Aires, AR",
   experienceYears: 3,
   // Reemplazado: lenguajes de front -> programas gestores de bases de datos (DBMS)
   skills: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "Oracle"],
   socialLinks: {
-    github: "https://github.com/abril",
-    linkedin: "https://linkedin.com/in/abril",
-    website: "https://Manuelsadosky.com",
+    github: "https://github.com/AbrilAADKSDJL/",
+    linkedin: "https://www.linkedin.com/in/abril-lezcano-98b39633b/",
+    website: "https://www.linkedin.com/in/abril-lezcano-98b39633b/",
     email: "lezcanoabril896@gmail.com",
   },
 };
@@ -79,8 +79,7 @@ const AbrilPage = () => {
               initial="hidden"
               animate="visible"
               className="text-foreground/90 leading-relaxed">
-                Me enfoco en construir interfaces limpias, accesibles y performantes. Disfruto trabajar con
-                herramientas modernas como React, Next.js y Tailwind. Fuera del código, me interesa el skate y la música.
+                Me interesa todo lo que seria el análisis de datos, la ingeniería de datos, y un poco de backend también. 
               </motion.p>
             </div>
 
