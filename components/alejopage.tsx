@@ -12,15 +12,15 @@ const alejoData: MemberProps = {
   role: "Frontend Developer",
   bio: "Apasionado por el desarrollo web, el rendimiento y las interfaces modernas accesibles.",
  
-  image: "/cffbe951f74aae885fd7576960d442a0.jpg",
+  image: "alejo.png",
   location: "Buenos Aires, AR",
   experienceYears: 3,
   skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js", "UI/UX"],
   socialLinks: {
-    github: "https://github.com/alejo",
-    linkedin: "https://linkedin.com/in/alejo",
+    github: "https://github.com/AlejoMirarchi",
+    linkedin: "https://www.linkedin.com/in/alejomirarchi/",
     twitter: "https://twitter.com/alejo",
-    website: "https://Manuelsadosky.com",
+    website: "https://www.linkedin.com/in/alejomirarchi/",
     email: "alejomirarchi@gmail.com",
   },
 };

@@ -15,28 +15,28 @@ function FeaturedWork() {
       title: "Pagina Tecnica7",
       description:
         "Desarrollo de una página web para la Técnica 7 del Instituto Manuel Sadosky, que incluye información sobre los cursos, el equipo docente y recursos para los estudiantes.",
-      imageUrl: "/ramos.jpg",
-      projectUrl: "https://tecnica7-manuelsadosky.vercel.app/",
-      technologies: ["React", "TypeScript", "CSS"],
-      githubRepo: "https://github.com/AlejoMirarchi/tecnica7",
+      imageUrl: "/escudotec.png",
+      projectUrl: "https://manuelsadosky.tecnica7ldz.edu.ar/",
+      technologies: ["React", "TypeScript", "CSS", "PostgreSQL"],
+      githubRepo: "https://github.com/HelloMeow10/Tecnica7-WebApp",
     },
     {
       title: "Juego ahorcado web",
       description:
         "Desarrollo de una página web para jugar al clásico juego del ahorcado. La página web incluye una interfaz interactiva donde los usuarios pueden adivinar palabras y ver su progreso.",
-      imageUrl: "/ramos.jpg",
-      projectUrl: "https://ahorcado-webapp.vercel.app/",
-      technologies: ["React", "TypeScript", "CSS"],
+      imageUrl: "/ahorcado.png",
+      projectUrl: "https://github.com/AlejoMirarchi/ahorcado",
+      technologies: ["HTML", "CSS", "JavaScript"],
       githubRepo: "https://github.com/AlejoMirarchi/ahorcado",
     },
     {
-      title: "Data Dashboard ",
+      title: "Sistema de expedientes MDLZ",
       description:
-        "Creación de un dashboard interactivo para visualizar y analizar datos de ventas de una empresa. El dashboard incluye gráficos, tablas y filtros para facilitar la toma de decisiones basada en datos.",
-      imageUrl: "/ramos.jpg",
-      projectUrl: "https://data-dashboard-ventas.example.com",
-      technologies: ["Python", "Dash", "Plotly"],
-      githubRepo: "https://github.com/AlejoMirarchi/data-dashboard",
+        "Estamos desarrollando un sistema de expedientes para la municipalidad de Lomas, donde los usuarios puedan realizar el seguimiento de los expedientes en las áreas correspondientes y evitar que queden estancados.",
+      imageUrl: "LOGO-MDLZ.png",
+      projectUrl: "",
+      technologies: ["React", "TypeScript", "CSS", "PostgreSQL"],
+      githubRepo: "",
     },
   ];
 

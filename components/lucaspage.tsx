@@ -10,14 +10,15 @@ const lucasData: MemberProps = {
   name: "Lucas",
   role: "Backend Developer",
   bio: "Apasionado por el desarrollo backend, la optimización de sistemas y las arquitecturas escalables.",
-  image: "/ramos.jpg",
+  image: "/lucas.png",
   location: "Buenos Aires, AR",
   experienceYears: 5,
   skills: ["Node.js", "Express", "GraphQL", "MongoDB", "PostgreSQL", "Docker"],
   socialLinks: {
-    github: "https://github.com/lucasdev",
-    linkedin: "https://linkedin.com/in/lucasdev",
-    email: "lucas@example.com",
+    github: "https://github.com/HelloMeow10",
+    linkedin: "https://www.linkedin.com/in/lucas-sebastian-ramos/",
+    website: "https://www.linkedin.com/in/lucas-sebastian-ramos/",
+    email: "lucasmiau28@gmail.com",
   },
 };
 
@@ -76,7 +77,7 @@ const LucasPage = () => {
                 className="text-purple-200 leading-relaxed"
               >
                 Me especializo en construir sistemas backend robustos y escalables. Disfruto trabajar con
-                tecnologías modernas como Node.js, GraphQL y Docker. Fuera del código, me interesa el Milei y tocar el piano.
+                tecnologías modernas como Node.js, GraphQL y Docker. Fuera del código, me interesa la política y tocar el piano.
               </motion.p>
             </div>
 
