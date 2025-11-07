@@ -17,7 +17,7 @@ function FeaturedWork() {
         "Desarrollo de una página web para la Técnica 7 del Instituto Manuel Sadosky, que incluye información sobre los cursos, el equipo docente y recursos para los estudiantes.",
       imageUrl: "/escudotec.png",
       projectUrl: "https://manuelsadosky.tecnica7ldz.edu.ar/",
-      technologies: ["React", "TypeScript", "CSS"],
+      technologies: ["React", "TypeScript", "CSS", "PostgreSQL"],
       githubRepo: "https://github.com/HelloMeow10/Tecnica7-WebApp",
     },
     {
@@ -26,16 +26,16 @@ function FeaturedWork() {
         "Desarrollo de una página web para jugar al clásico juego del ahorcado. La página web incluye una interfaz interactiva donde los usuarios pueden adivinar palabras y ver su progreso.",
       imageUrl: "/ahorcado.png",
       projectUrl: "https://github.com/AlejoMirarchi/ahorcado",
-      technologies: ["React", "TypeScript", "CSS"],
+      technologies: ["HTML", "CSS", "JavaScript"],
       githubRepo: "https://github.com/AlejoMirarchi/ahorcado",
     },
     {
       title: "Sistema de expedientes MDLZ",
       description:
-        "Creación de un dashboard interactivo para visualizar y analizar datos de ventas de una empresa. El dashboard incluye gráficos, tablas y filtros para facilitar la toma de decisiones basada en datos.",
+        "Estamos desarrollando un sistema de expedientes para la municipalidad de Lomas, donde los usuarios puedan realizar el seguimiento de los expedientes en las áreas correspondientes y evitar que queden estancados.",
       imageUrl: "LOGO-MDLZ.png",
       projectUrl: "",
-      technologies: ["Python", "Dash", "Plotly"],
+      technologies: ["React", "TypeScript", "CSS", "PostgreSQL"],
       githubRepo: "",
     },
   ];
