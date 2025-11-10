@@ -10,8 +10,7 @@ import { NavLink } from "@/components/nav-link"
 import { Code, User, Star } from "lucide-react"
 import FlyOutMenu from "./FlyOutMenuFixed"
 import FlyOutMenuFixed from "./FlyOutMenuFixed"
-// ShiftingDropdownMenu is mounted at the page level (app/page.tsx) and listens to external events when enabled.
-// import { ShiftingDropdownMenu } from "./shiftingdropdownmenu"
+
 import ProfileAvatars from "./profile-avatars"
 
 export function Header() {
@@ -66,7 +65,7 @@ export function Header() {
   }, [isContactOpen])
 
   return (
-  <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border overflow-visible">
+  <header className="fixed top-0 left-0 right-0 z-50 bg-background/30 backdrop-blur-md border-b border-border overflow-visible">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
@@ -74,24 +73,18 @@ export function Header() {
               className="w-8 h-8 text-primary"
               
             >
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                initial={{ rotate: 0, path:0 }}
-              animate={{ rotate: 360,path:1 }}
-              transition={{ duration: 2, ease: "linear", repeat: Infinity
-                
-               }}
-              >
+              <motion.svg className="svg-draw" clipRule="evenodd" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path
+                  d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm2.818 5.865 2.635 1.622-2.641 1.645c-.207.146-.318.378-.318.613 0 .601.682.966 1.182.613l3.511-2.257c.199-.141.318-.369.318-.614 0-.244-.119-.472-.318-.613l-3.505-2.235c-.498-.35-1.182.009-1.182.612 0 .236.111.468.318.614zm9.678 3.873c0-.414-.336-.75-.75-.75h-3.5c-.413 0-.75.336-.75.75s.337.75.75.75h3.5c.414 0 .75-.336.75-.75z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M8.757 15.243l-2.121 2.121m12.728 0l-2.121-2.121M8.757 8.757L6.636 6.636"
                 />
-              </motion.svg></motion.div>
+              </motion.svg>
+             
+            </motion.div>
               <motion.span
                 className="text-xl font-semibold"
                 style={{ color: "#0b3d91" }}
@@ -109,19 +102,8 @@ export function Header() {
               >
                 MonsterCoders
               </motion.span>
-            
+
           </div>
-          
-
-
-
-
-
-
-            
-            
-            
-
             <motion.nav
             className="hidden md:flex items-center gap-8"
             variants={navVariants}
@@ -133,16 +115,14 @@ export function Header() {
               <div className="hidden md:flex items-center gap-3">
                 <ProfileAvatars
                   avatars={[
-                    { name: "Alejo Mirarchi", src: "/cffbe951f74aae885fd7576960d442a0.jpg", href: "/alejopage", tabId: 1 },
-                    { name: "Lucas", src: "/ramos.jpg", href: "/lucaspage", tabId: 3 },
-                    { name: "Abril", src: "/fotoperfilgato.jpg", href: "/abrilpage", tabId: 2 },
+                    { name: "Alejo Mirarchi", src: "/alejo.png", href: "/alejopage", tabId: 1 },
+                    { name: "Lucas", src: "/lucas.png", href: "/lucaspage", tabId: 3 },
+                    { name: "Abril", src: "/abril.png", href: "/abrilpage", tabId: 2 },
                   ]}
                   size={45}
                   showNames={false}
                 />
               </div>
-              
-             
             <motion.button
               onClick={() => scrollToSection("inicio")}
               className="text-sm font-medium text-muted-foreground  hover:text-foreground transition-colors"

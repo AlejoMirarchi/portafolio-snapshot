@@ -1,6 +1,15 @@
+"use client"
 import { Reveal } from "@/components/reveal"
+import { useRef } from "react"
+import { useInView,motion } from "framer-motion";
 
 export function AboutSection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+ 
+  const isInView = useInView(ref, {
+    amount: 0.2,
+    once: true,
+  });
   return (
     <section id="nosotros" className="relative py-20 px-4 lg:px-8 overflow-hidden">
       {/* SVG decorativo de fondo */}
@@ -17,8 +26,36 @@ export function AboutSection() {
           <circle cx="50" cy="150" r="30" fill="url(#about-gradient)" opacity="0.4" />
         </svg>
       </div>
-
-      <div className="container mx-auto max-w-6xl">
+    
+    <motion.div
+      animate={{
+        y: isInView ? "-100%" : "0%",
+        transition: { duration: 0.5, ease: "easeInOut" },
+      }}
+      className="absolute bottom-0 left-0 top-0 z-10 w-1/2 bg-primary/70"
+      
+      style={{
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)',
+        maskImage:
+          'linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)',
+      }}
+    />
+    <motion.div
+      animate={{
+        y: isInView ? "100%" : "0%",
+        transition: { duration: 0.5, ease: "easeInOut" },
+      }}
+      className="absolute bottom-0 right-0 top-0 z-10 w-1/2 bg-primary/70"
+      
+      style={{
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)',
+        maskImage:
+          'linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)',
+      }}
+    />
+  <div ref={ref} className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             
