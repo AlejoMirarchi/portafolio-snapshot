@@ -104,6 +104,7 @@ export function Header() {
               </motion.span>
 
           </div>
+          
             <motion.nav
             className="hidden md:flex items-center gap-8"
             variants={navVariants}
@@ -188,7 +189,7 @@ export function Header() {
               >
                 Abril
               </NavLink>
-
+              
               <button
                 onClick={() => scrollToSection("inicio")}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"

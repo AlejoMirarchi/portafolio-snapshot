@@ -1,6 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
+import NextLink from "next/link"
+
+// Motion-enabled Next.js Link for client navigation without full reload
+const MotionLink = motion(NextLink)
 
 export function WelcomeSection() {
   return (
@@ -108,15 +112,15 @@ export function WelcomeSection() {
 
         {/* Call to action */}
         <div className="mt-8 flex items-center justify-center gap-3">
-          <motion.a
-            href="#nosotros"
+          <MotionLink
+            href="/smoothScroll"
             className="rounded-md bg-primary text-primary-foreground px-5 py-2 text-sm font-medium hover:opacity-90"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.4 }}
           >
             Conocer más
-          </motion.a>
+          </MotionLink>
           <motion.a
             href="#equipo"
             className="rounded-md border border-border px-5 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:border-foreground/40"
