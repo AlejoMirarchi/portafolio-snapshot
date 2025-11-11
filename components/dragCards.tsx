@@ -3,15 +3,24 @@
 import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { twMerge } from "tailwind-merge"
+import { NavLink } from "@/components/nav-link"
+import Link from "next/link"
 
 export const DragCards: React.FC = () => {
     return (
-        <section className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-primary/10" >
+        <section className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-zinc-900/10" >
             
-            <div className="absolute inset-0 -z-10 bg-white/10 dark:bg-black/20 backdrop-blur-3xl pointer-events-none" />
+            <div className="absolute inset-0 -z-10  backdrop-blur-3xl pointer-events-none" />
             <h2 className="relative z-20 text-[20vw] font-black text-neutral-800 md:text-[150px]">
                 JUST<span className="text-primary">CODE</span>.
             </h2>
+            <motion.button 
+            onClick={()=>{
+                
+            }
+
+            }
+            className=" top-0 p-3 border-primary-foreground inset-shadow-zinc-600 bg-primary/40 my-4 mx-2 rounded-full text-foreground  ">Volver a inicio</motion.button>
             <Cards />
         </section>
     )
@@ -23,9 +32,9 @@ const Cards: React.FC = () => {
     return (
         <div ref={containerRef} className="absolute inset-0 z-20">
             <Card
-                src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174"
+                src={"/escudotec.png"}
                 alt="ejemplo"
-                top="5%"
+                top="19%"
                 left="5%"
                 rotate="10deg"
                 className="w-40 md:w-56"
