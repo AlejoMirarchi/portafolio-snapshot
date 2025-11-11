@@ -145,6 +145,9 @@ export function Header() {
             >
               Equipo
             </motion.button>
+            <Link href="/drag-cards" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              DragCards
+            </Link>
               <Button
                 onClick={() => setIsContactOpen(true)}
                 size="sm"
